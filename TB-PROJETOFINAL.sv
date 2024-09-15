@@ -21,7 +21,7 @@ module tb_pulse_width_counter;
     .last_time_ms(last_time_ms)
   );
 
-  // Gera o clock (50 MHz = 20 ns de período)
+  // Gera o clock
   always #10 clk = ~clk;
 
   // Inicializa os sinais e reseta o sistema
@@ -29,7 +29,7 @@ module tb_pulse_width_counter;
     $dumpfile("waveform.vcd");
     $dumpvars(0, tb_pulse_width_counter);
 
-    // Atribui valores ao array pulse_durations
+    // Atribui valores ao pulse_durations
     pulse_durations[0] = 100_000;
     pulse_durations[1] = 200_000;
     pulse_durations[2] = 50_000;
@@ -43,7 +43,7 @@ module tb_pulse_width_counter;
     #40;
     rst = 0;
 
-    // Loop para realizar múltiplos testes com durações predefinidas
+    // Loop para realizar múltiplos testes
     for (int i = 0; i < NUM_TESTS; i++) begin
       $display("Iniciando Teste %0d com duração de %0d ciclos de clock", i + 1, pulse_durations[i]);
 
