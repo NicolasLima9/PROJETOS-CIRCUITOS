@@ -1,4 +1,4 @@
-module pulse_width_counter (
+module contador_ms (
     input logic clk, rst, pulse_in,
     input logic read_time, // Sinal para ler o tempo da última rodada
     output logic ready, done_tick,
