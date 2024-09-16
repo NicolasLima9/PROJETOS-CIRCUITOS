@@ -1,4 +1,4 @@
-module tb_pulse_width_counter;
+module tb_contador_ms;
   logic clk, rst, pulse_in, read_time;
   logic ready, done_tick;
   logic [19:0] count;
